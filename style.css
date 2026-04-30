@@ -133,8 +133,22 @@ body {
 .internship-list-container,
 .page-wrapper,
 .form-wrapper {
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 900px;
+    padding: 0 15px;
+}
+
+@media (max-width: 480px) {
+    .content-section h1 {
+        font-size: 18px;
+    }
+
+    .internship-item h3 {
+        font-size: 18px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
 }
 
 .internship-item {
@@ -159,13 +173,12 @@ body {
     color: var(--text-color);
 }
 
-.internship-item .details {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 15px;
-    color: var(--text-secondary-color);
+@media (max-width: 600px) {
+    .internship-item .details {
+        flex-direction: column;
+        gap: 5px;
+    }
 }
-
 .internship-item .description {
     font-size: 14px;
     color: var(--text-secondary-color);
@@ -316,13 +329,15 @@ body {
     margin: 0 0 10px 0;
 }
 
-.applied-item {
-    display: grid;
-    grid-template-columns: 2fr 1.5fr auto auto;
-    gap: 15px;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
-    align-items: center;
+@media (max-width: 768px) {
+    .applied-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .withdraw-btn {
+        width: 100%;
+    }
 }
 
 .applied-item:last-child {
@@ -348,6 +363,30 @@ body {
     cursor: pointer;
     font-size: 12px;
     font-weight: 600;
+}
+@media (max-width: 768px) {
+    .modal-dialog {
+        width: 90%;
+        margin: 10px;
+    }
+
+    .modal-dialog.large {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .auth-modal {
+        padding: 20px;
+    }
+}
+@media (max-width: 480px) {
+    button {
+        width: 100%;
+    }
+
+    .ai-search {
+        width: 100%;
+    }
 }
 
 
@@ -573,12 +612,28 @@ body {
 
 /* ================== NEW CSS FOR 3D DASHBOARD CARD (FIXED) ================== */
 
-.dashboard-card {
-    max-width: 800px;
-    margin: 30px auto;
-    display: grid;
-    /* <-- THE FIX: Changed from flex to grid */
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 768px) {
+    .dashboard-card {
+        grid-template-columns: 1fr; /* stack */
+    }
+
+    .model-section {
+        min-height: 200px;
+    }
+
+    .content-section h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .content-section p {
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
     /* <-- THE FIX: Create two equal columns */
     align-items: center;
     /* Vertically centers the content in each column */
@@ -653,6 +708,31 @@ body {
     display: block;
     width: 100% !important;
     height: 100% !important;
+}
+
+@media (max-width: 768px) {
+    .app-header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .app-header nav {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-tab {
+        font-size: 13px;
+        padding: 10px;
+        height: auto;
+    }
+
+    #logout-btn {
+        margin-left: 0;
+    }
 }
 
 
