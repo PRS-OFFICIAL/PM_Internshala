@@ -1,616 +1,285 @@
-:root {
-    --bg-color: #f0f2f5;
-    --card-bg-color: #ffffff;
-    --text-color: #333333;
-    --text-secondary-color: #65676b;
-    --primary-color: #0d6efd;
-    --primary-hover-color: #0b5ed7;
-    --accent-color: #1abc9c;
-    --accent-hover-color: #16a085;
-    --border-color: #e0e0e0;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --logout-bg: #627fdf;
-    --status-bg: #ffc107;
-    --success-glow: rgba(25, 135, 84, 0.5);
-    --danger-glow: rgba(220, 53, 69, 0.5);
+
+
+i have to do a post for SIH hackathon in which i have participated and gone till 2nd round in which i made a platform which could find internship like internshala for beginner and also there is ai inbuilt feature in which you can give in your preference and the platform could suggest you the internship based on your preferences
+
+Here’s a clean, professional social media post you can use (LinkedIn/Instagram). I’ll keep it impactful but not overhyped:
+
+🚀 Excited to share my journey at the Smart India Hackathon (SIH)!
+
+I had the opportunity to participate in SIH and made it to the 2nd round, where I worked on building an innovative platform aimed at helping beginners kickstart their careers.
+
+💡 What I built:
+A platform similar to Internshala, but designed specifically for beginners who often struggle to find the right starting point.
+
+🔍 Key Features:
+
+Personalized internship discovery
+
+Beginner-friendly opportunities
+
+AI-powered recommendation system 🤖
+
+The most exciting part was integrating an AI feature where users can simply enter their preferences (skills, interests, goals), and the platform intelligently suggests relevant internships tailored to them.
+
+🎯 Goal:
+To simplify the process of finding the right opportunities and reduce the confusion beginners face when entering the professional world.
+
+This experience helped me strengthen my skills in:
+
+Problem solving
+
+UI/UX thinking
+
+AI integration
+
+Building real-world solutions under pressure
+
+Grateful for the learning experience and looking forward to building even more impactful solutions ahead! 🚀
+
+#SIH #SmartIndiaHackathon #Innovation #AI #WebDevelopment #Internships #StudentProjects
+
+If you want, I can:
+
+Make it more casual / Instagram style
+
+Add tech stack (Python, ML, etc.)
+
+Or tailor it for LinkedIn recruiters (more professional tone)
+
+
+
+Pasted text.txt
+Document
+make it responsivw
+
+Your HTML structure is already mostly responsive-ready (you used meta viewport 👍), but the real issue is missing responsive CSS.
+
+I’ll give you a clean, working responsive CSS you can add to your style.css so your SIH project looks good on mobile, tablet, and desktop.
+
+🔧 Add This to Your style.css
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-body.dark-mode {
-    --bg-color: #18191a;
-    --card-bg-color: #242526;
-    --text-color: #e4e6eb;
-    --text-secondary-color: #b0b3b8;
-    --border-color: #3a3b3c;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Base Styles */
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-.app-container.blur {
-    filter: blur(5px);
+/* CONTAINER */
+.app-container {
+    width: 100%;
+    min-height: 100vh;
 }
 
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
-}
-
-.card-ui {
-    background-color: var(--card-bg-color);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    padding: 30px;
-    border: 1px solid var(--border-color);
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-
-/* Header */
-
+/* HEADER */
 .app-header {
-    background: var(--card-bg-color);
-    padding: 0 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    height: 70px;
-    border-bottom: 1px solid var(--border-color);
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.logo {
-    color: var(--primary-color);
-    font-size: 22px;
-    font-weight: 600;
+    padding: 15px 30px;
+    flex-wrap: wrap;
 }
 
 .app-header nav {
     display: flex;
-    align-items: center;
-    gap: 5px;
-    height: 100%;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.nav-tab {
-    padding: 0 15px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 15px;
-    height: 100%;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s ease;
+/* DASHBOARD CARD */
+.dashboard-card {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    color: var(--text-secondary-color);
+    padding: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.nav-tab.active,
-.nav-tab:hover {
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
+.content-section {
+    flex: 1;
+    min-width: 280px;
 }
 
-#logout-btn {
-    padding: 8px 15px;
-    border: none;
-    background-color: var(--logout-bg);
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 15px;
+.model-section {
+    flex: 1;
+    min-width: 280px;
 }
 
-.dark-mode-toggle {
-    background: transparent;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: var(--text-secondary-color);
-    margin-left: 10px;
+canvas {
+    width: 100% !important;
+    height: auto !important;
 }
 
-
-/* Dashboard & Cards */
-
-.internship-list-container,
-.page-wrapper,
+/* FORM */
 .form-wrapper {
-    max-width: 900px;
-    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
+
+.form-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* BUTTONS */
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* INTERNSHIP LIST */
+.internship-list-container {
+    padding: 20px;
+}
+
+/* RESULTS */
+.results-card {
+    width: 100%;
+}
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .app-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .app-header nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .dashboard-card {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .content-section h1 {
+        font-size: 22px;
+    }
+
+    .content-section p {
+        font-size: 14px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .modal-dialog {
+        width: 90%;
+    }
+}
+
+/* ========================= */
+/* 📱 SMALL MOBILE */
+/* ========================= */
 
 @media (max-width: 480px) {
+
+    .app-header {
+        padding: 10px;
+    }
+
     .content-section h1 {
         font-size: 18px;
     }
 
-    .internship-item h3 {
-        font-size: 18px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-}
-
-.internship-item {
-    background: var(--card-bg-color);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
-    margin-bottom: 20px;
-}
-
-.internship-item h3 {
-    margin: 0 0 5px 0;
-    color: var(--primary-color);
-    font-size: 20px;
-}
-
-.internship-item .company {
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: var(--text-color);
-}
-
-@media (max-width: 600px) {
-    .internship-item .details {
-        flex-direction: column;
-        gap: 5px;
-    }
-}
-.internship-item .description {
-    font-size: 14px;
-    color: var(--text-secondary-color);
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.view-apply-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    background: var(--accent-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.view-apply-btn:hover {
-    background: var(--accent-hover-color);
-}
-
-
-/* Form Page & Custom Select */
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.radio-group {
-    display: flex;
-    gap: 20px;
-}
-
-.custom-select {
-    position: relative;
-}
-
-.select-selected {
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    padding: 12px;
-    cursor: pointer;
-    user-select: none;
-    color: var(--text-secondary-color);
-}
-
-.select-selected.active {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.select-items {
-    position: absolute;
-    background-color: var(--card-bg-color);
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    border: 1px solid var(--border-color);
-    border-top: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.select-hide {
-    display: none;
-}
-
-.select-items label {
-    display: block;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.select-items label:hover {
-    background-color: var(--bg-color);
-}
-
-.select-items input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.select-search {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    border: none;
-    border-bottom: 1px solid var(--border-color);
-    background-color: var(--card-bg-color);
-    color: var(--text-color);
-    outline: none;
-}
-
-
-/* Other Pages */
-
-.loading-card,
-.results-card {
-    text-align: center;
-}
-
-.loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid var(--border-color);
-    border-bottom-color: var(--primary-color);
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    margin-bottom: 20px;
-}
-
-@keyframes rotation {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-#recommendation-results-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.result-item {
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: left;
-}
-
-.result-item h4 {
-    color: var(--primary-color);
-    margin: 0 0 10px 0;
-}
-
-@media (max-width: 768px) {
-    .applied-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .withdraw-btn {
-        width: 100%;
-    }
-}
-
-.applied-item:last-child {
-    border-bottom: none;
-}
-
-.status-badge {
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: center;
-    background-color: var(--status-bg);
-    color: #333;
-}
-
-.withdraw-btn {
-    background: none;
-    border: 1px solid var(--logout-bg);
-    color: var(--logout-bg);
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-}
-@media (max-width: 768px) {
-    .modal-dialog {
-        width: 90%;
-        margin: 10px;
-    }
-
-    .modal-dialog.large {
-        max-width: 95%;
-        padding: 20px;
-    }
-
-    .auth-modal {
-        padding: 20px;
-    }
-}
-@media (max-width: 480px) {
     button {
         width: 100%;
     }
 
-    .ai-search {
-        width: 100%;
+    .nav-tab {
+        flex: 1;
+        font-size: 12px;
     }
 }
+💡 What This Fixes in Your Code
+Based on your file 
+
+:
+
+✅ Dashboard now stacks (text + 3D canvas)
+
+✅ Navbar doesn’t overflow on mobile
+
+✅ Forms resize properly
+
+✅ Buttons become touch-friendly
+
+✅ Canvas (Three.js) won’t break layout
+
+✅ Modal becomes mobile-friendly
+
+🚀 Bonus Improvements (Optional but powerful)
+If you want next-level UI (hackathon winning vibes):
+
+Add Glassmorphism cards
+
+Add hover animations
+
+Add loading skeletons instead of spinner
+
+Use CSS Grid for internship cards
+
+If you want, I can:
+
+🔥 Make this UI look like a startup-level product (Internshala + AI vibe)
+
+🎨 Add modern animations + gradients
+
+📱 Convert it into React + Tailwind (industry level)
+
+Just tell me 👍
 
 
-/* Modals & Animations */
 
-.modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(-45deg, #001f3f, #0074d9, #7fdbff, #39cccc);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+Pasted text(1).txt
+Document
+this is the css file now give me the requuired changes to be done for good responsivness
+
+Good news: your CSS is already well-structured and modern (variables, grid, dark mode 👏).
+But responsiveness is breaking mainly because of:
+
+Fixed layouts (grid not collapsing)
+
+No media queries
+
+Some fixed widths/heights
+
+Header + applied items not adapting
+
+I’ll give you exact changes (not full rewrite) so you can directly update your file 
+
+.
+
+🔧 ✅ REQUIRED RESPONSIVE FIXES
+1. 📱 Fix Dashboard Grid (MOST IMPORTANT)
+Right now:
+
+.dashboard-card {
+    grid-template-columns: 1fr 1fr;
 }
-
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-#apply-modal-backdrop {
-    background: rgba(0, 0, 0, 0.7);
-    animation: none;
-}
-
-.modal-dialog {
-    background: var(--card-bg-color);
-    border-radius: 12px;
-    width: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    animation: fadeInSlideUp 0.5s ease-out forwards;
-    position: relative;
-    border: 1px solid var(--border-color);
-}
-
-@keyframes fadeInSlideUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.auth-modal {
-    max-width: 400px;
-    padding: 40px;
-}
-
-.modal-title {
-    text-align: center;
-    color: var(--primary-color);
-    margin: 0 0 25px 0;
-}
-
-.modal-dialog .form-group input,
-.modal-dialog textarea {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.modal-dialog .form-group input:focus,
-.modal-dialog textarea:focus {
-    transform: scale(1.02);
-    box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
-    outline: none;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.switch-view {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-.modal-dialog.large {
-    max-width: 700px;
-    max-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    color: #888;
-}
-
-#apply-modal-content {
-    overflow-y: auto;
-    padding-right: 15px;
-}
-
-#apply-modal-content h3 {
-    color: var(--primary-color);
-    margin-top: 0;
-}
-
-#apply-modal-content h4 {
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
-    margin: 25px 0 15px 0;
-    font-size: 16px;
-}
-
-#apply-modal-content textarea {
-    min-height: 80px;
-    resize: vertical;
-}
-
-.modal-footer {
-    padding-top: 20px;
-    margin-top: 20px;
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    justify-content: flex-end;
-}
-
-.toast {
-    position: fixed;
-    bottom: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--accent-color);
-    color: white;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    transition: bottom 0.5s ease-in-out;
-    z-index: 2000;
-}
-
-.toast.show {
-    bottom: 30px;
-}
-
-
-/* LOGIN ANIMATIONS */
-
-.shake {
-    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
-}
-
-@keyframes shake {
-    10%,
-    90% {
-        transform: translate3d(-1px, 0, 0);
-    }
-    20%,
-    80% {
-        transform: translate3d(2px, 0, 0);
-    }
-    30%,
-    50%,
-    70% {
-        transform: translate3d(-4px, 0, 0);
-    }
-    40%,
-    60% {
-        transform: translate3d(4px, 0, 0);
-    }
-}
-
-.success-pulse {
-    animation: successPulse 0.8s ease-out;
-}
-
-@keyframes successPulse {
-    0% {
-        box-shadow: 0 0 0 0 var(--success-glow);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(25, 135, 84, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0);
-    }
-}
-
-
-/* ================== NEW CSS FOR 3D DASHBOARD CARD ================== */
-
-
-/* In your style.css file, replace the old section with this new one */
-
-
-/* ================== NEW CSS FOR 3D DASHBOARD CARD (FIXED) ================== */
+👉 Add this:
 
 @media (max-width: 768px) {
     .dashboard-card {
@@ -634,81 +303,10 @@ body {
         justify-content: center;
     }
 }
-    /* <-- THE FIX: Create two equal columns */
-    align-items: center;
-    /* Vertically centers the content in each column */
-    background-color: var(--card-bg-color);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
-    overflow: hidden;
-}
+2. 📱 Fix Header (NAV OVERFLOW ISSUE)
+Your header will break on small screens.
 
-.content-section {
-    padding: 30px;
-    /* 'flex: 1' is no longer needed as grid handles the layout */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.content-section h1 {
-    font-size: 26px;
-    color: var(--text-color);
-    font-weight: 600;
-    margin: 0 0 10px 0;
-}
-
-.content-section p {
-    color: var(--text-secondary-color);
-    margin-bottom: 25px;
-}
-
-.buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.buttons button {
-    padding: 10px 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
-}
-
-.ai-search {
-    background-color: var(--primary-color);
-    color: white;
-    align-items: center;
-    min-height: auto;
-    width: 200px;
-}
-
-.ai-search:hover {
-    background-color: var(--primary-hover-color);
-    align-content: center;
-}
-
-.model-section {
-    /* 'flex: 1' is no longer needed */
-    height: 100%;
-    /* <-- THE FIX: Makes the section fill the grid cell's height */
-    min-height: 300px;
-    background-color: #1a1a2e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    /* Important for the canvas */
-}
-
-#threeJsCanvas {
-    display: block;
-    width: 100% !important;
-    height: 100% !important;
-}
+👉 Add:
 
 @media (max-width: 768px) {
     .app-header {
@@ -734,9 +332,266 @@ body {
         margin-left: 0;
     }
 }
+3. 📱 Fix Internship Details Row
+Currently:
+
+.internship-item .details {
+    display: flex;
+    gap: 20px;
+}
+👉 Add:
+
+@media (max-width: 600px) {
+    .internship-item .details {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+4. 📱 Fix Applied Section Grid
+Current:
+
+.applied-item {
+    grid-template-columns: 2fr 1.5fr auto auto;
+}
+👉 Replace for mobile:
+
+@media (max-width: 768px) {
+    .applied-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .withdraw-btn {
+        width: 100%;
+    }
+}
+5. 📱 Fix Modals (VERY IMPORTANT)
+👉 Add:
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        width: 90%;
+        margin: 10px;
+    }
+
+    .modal-dialog.large {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .auth-modal {
+        padding: 20px;
+    }
+}
+6. 📱 Fix Buttons & Touch UX
+👉 Add:
+
+@media (max-width: 480px) {
+    button {
+        width: 100%;
+    }
+
+    .ai-search {
+        width: 100%;
+    }
+}
+7. 📱 Fix Container Widths
+Your layout is capped at 800px:
+
+.internship-list-container,
+.page-wrapper,
+.form-wrapper {
+    max-width: 800px;
+}
+👉 Improve it:
+
+.internship-list-container,
+.page-wrapper,
+.form-wrapper {
+    max-width: 900px;
+    padding: 0 15px;
+}
+8. 📱 Improve Typography Scaling
+👉 Add:
+
+@media (max-width: 480px) {
+    .content-section h1 {
+        font-size: 18px;
+    }
+
+    .internship-item h3 {
+        font-size: 18px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+}
+🚀 RESULT AFTER THESE FIXES
+After applying above changes:
+
+✅ Dashboard stacks cleanly (AI + 3D)
+✅ Navbar doesn’t overflow
+✅ Internship cards look clean on mobile
+✅ Forms are usable on phone
+✅ Modal doesn’t break
+✅ UI feels like real product (not hackathon demo)
+
+🔥 PRO TIP (This will impress judges)
+If you want to go next level:
+
+Add this:
+
+html {
+    scroll-behavior: smooth;
+}
+AND:
+
+* {
+    max-width: 100%;
+}
+⚡ If you want next upgrade:
+I can help you:
+
+Convert this into Tailwind (industry standard)
+
+Add glassmorphism + animations
+
+Make it look like Internshala / LinkedIn level UI
+
+Just tell me 👍
 
 
-/* ================== END OF NEW CSS ================== */
+    <main id="page-container" style="display: none;">
+        <div id="dashboard-page" class="page active">
 
+            <div class="dashboard-card">
+                <div class="content-section">
+                    <h1>Find internships & jobs tailored for students</h1>
+                    <p>Use our AI to find the best internships for you according to your skill set and preferred location.</p>
+                    <div class="buttons">
+                        <button id="ai-search-btn" class="ai-search"> AI Search</button>
+                    </div>
+                </div>
+                <div class="model-section">
+                    <canvas id="threeJsCanvas"></canvas>
+                </div>
+            </div>
+            <div id="internship-list" class="internship-list-container"></div>
+        </div>
 
-/* ================== END OF NEW CSS ================== */
+        <div id="form-page" class="page">
+            <div class="form-wrapper">
+                <div class="form-container card-ui">
+                    <header>
+                        <h1>FIND YOUR INTERNSHIP</h1>
+                        <p>Enter your details to get personalized recommendations.</p>
+                    </header>
+                    <form id="recommendation-form">
+                        <div class="form-group">
+                            <label>Preferred Location(s)</label>
+                            <div class="custom-select" id="location-select">
+                                <div class="select-selected">Select Locations...</div>
+                                <div class="select-items select-hide"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Skills</label>
+                            <div class="custom-select" id="skills-select">
+                                <div class="select-selected">Select Skills...</div>
+                                <div class="select-items select-hide">
+                                    <input type="text" placeholder="Search skills..." class="select-search">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                            <div class="custom-select" id="role-select">
+                                <div class="select-selected">Select Role...</div>
+                                <div class="select-items select-hide">
+                                    <input type="text" placeholder="Search roles..." class="select-search">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Stipend</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="stipend" value="yes" checked> Yes</label>
+                                <label><input type="radio" name="stipend" value="no"> No</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Find My Internships</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="applied-page" class="page">
+            <div class="page-wrapper">
+                <div class="card-ui">
+                    <h2>Your Applications</h2>
+                    <div id="applied-internships-list"></div>
+                </div>
+            </div>
+        </div>
+        <div id="loading-page" class="page">
+            <div class="page-wrapper">
+                <div class="card-ui loading-card">
+                    <div class="loader"></div>
+                    <h2>Analyzing Your Profile...</h2>
+                    <p>Our AI is finding the best opportunities for you!</p>
+                </div>
+            </div>
+        </div>
+        <div id="results-page" class="page">
+            <div class="page-wrapper">
+                <div class="card-ui results-card">
+                    <header>
+                        <h1>Top Recommendations For You! 🚀</h1>
+                        <p>Based on your profile, we suggest these top 3 internships.</p>
+                    </header>
+                    <div id="recommendation-results-list"></div>
+                    <button id="start-over-btn" class="submit-btn">Start Over</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="auth-modal-backdrop" class="modal-backdrop">
+    <div id="auth-modal" class="modal-dialog auth-modal">
+        <div id="login-view">
+            <h2 class="modal-title">LOGIN</h2>
+            <form id="login-form">
+                <div class="form-group"><label>Username</label><input type="text" id="login-username" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="login-password" required></div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <p class="switch-view">Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+        </div>
+        <div id="signup-view" style="display: none;">
+            <h2 class="modal-title">Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group"><label>Full Name</label><input type="text" id="signup-fullname" required></div>
+                <div class="form-group"><label>Username</label><input type="text" id="signup-username" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="signup-password" required></div>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+            <p class="switch-view">Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+</div>
+
+<div id="apply-modal-backdrop" class="modal-backdrop" style="display: none;">
+    <div class="modal-dialog large">
+        <button class="close-btn">&times;</button>
+        <div id="apply-modal-content"></div>
+    </div>
+</div>
+
+<div id="toast-notification" class="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+
+Close
